@@ -1,7 +1,3 @@
-// Materia: Programación I, Paralelo 1
-// Autor: Rosslyn Monserrat Cespedes Quisbert
-// Fecha creación: 05/03/2024
-// Fecha modificación: 
 // Número de ejercicio: 12
 // Problema planteado: Un arreglo constante contiene la producción en toneladas métricas de 6 minerales, y otro contiene los nombres de estos minerales, para obtener:
 // - Buscar por nombre de mineral y desplegar la producción
