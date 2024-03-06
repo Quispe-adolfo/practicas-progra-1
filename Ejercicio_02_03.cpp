@@ -1,7 +1,3 @@
-// Materia: Programación I, Paralelo 1
-// Autor: Rosslyn Monserrat Cespedes Quisbert
-// Fecha creación: 05/03/2024
-// Fecha modificación: 
 // Número de ejercicio: 3
 // Problema planteado: Escribir un programa que genere un arreglo de 50 posiciones con números al azar en el rango de A - B y determine cuántos de estos elementos son números primos.
 
