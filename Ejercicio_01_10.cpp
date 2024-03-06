@@ -1,36 +1,55 @@
 #include <iostream>
 #include <string>
 
-int main() {
-    // Arreglo de población y arreglo de nombres de departamentos
-    const int tamano_arreglo = 9;
-    int poblacion[tamano_arreglo] = {10000, 20000, 15000, 30000, 25000, 18000, 22000, 27000, 23000};
-    std::string nombres[tamano_arreglo] = {"Departamento1", "Departamento2", "Departamento3", "Departamento4",
-                                            "Departamento5", "Departamento6", "Departamento7", "Departamento8", "Departamento9"};
+using namespace std;
 
+int main() 
+{
+    // Arreglo de población y arreglo de nombres de departamentos
+    const int tamanioArreglo = 9;
+    int poblacion[tamanioArreglo];
+    string nombres[tamanioArreglo];
+
+    // Solicitar al usuario que ingrese los valores de población y los nombres de los departamentos
+    cout << "Por favor, ingrese el nombre correspondiente del departamento y los datos de poblacion:" << endl;
+    for (int i = 0; i < tamanioArreglo; ++i) 
+    {
+        cout << "Nombre: ";
+        cin >> nombres[i];
+        cout << "Poblacion: ";
+        cin >> poblacion[i];
+    }
+    
     // Encontrar el departamento con la mayor población
-    int max_poblacion = poblacion[0];
-    std::string dept_mayor_poblacion = nombres[0];
-    for (int i = 1; i < tamano_arreglo; ++i) {
-        if (poblacion[i] > max_poblacion) {
-            max_poblacion = poblacion[i];
-            dept_mayor_poblacion = nombres[i];
+    string mayor_poblacion = nombres[0]; // Inicializamos con el primer nombre
+
+    for (int i = 1; i < tamanioArreglo; ++i) 
+    {
+        if (poblacion[i] > poblacion[0]) // Comparamos con la población del primer departamento
+        {
+            mayor_poblacion = nombres[i];
+            poblacion[0] = poblacion[i]; // Actualizamos la población máxima encontrada
         }
     }
 
     // Encontrar el departamento con la menor población
+    string menor_poblacion = nombres[0]; // Inicializamos con el primer nombre
     int min_poblacion = poblacion[0];
-    std::string dept_menor_poblacion = nombres[0];
-    for (int i = 1; i < tamano_arreglo; ++i) {
-        if (poblacion[i] < min_poblacion) {
+
+    for (int i = 1; i < tamanioArreglo; ++i) 
+    {
+        if (poblacion[i] < min_poblacion) // Comparamos con la población mínima actual
+        {
             min_poblacion = poblacion[i];
-            dept_menor_poblacion = nombres[i];
+            menor_poblacion = nombres[i]; // Actualizamos el nombre del departamento
+        } 
+        else if (poblacion[i] == min_poblacion && nombres[i] < menor_poblacion) 
+        {
+            // Si encontramos un departamento con la misma población mínima pero aparece antes en la lista de nombres
+            menor_poblacion = nombres[i];
         }
     }
 
     // Imprimir resultados
-    std::cout << "Departamento con la mayor poblacion: " << dept_mayor_poblacion << std::endl;
-    std::cout << "Departamento con la menor poblacion: " << dept_menor_poblacion << std::endl;
-
-    return 0;
-}
+    cout << "Departamento con la mayor poblacion: " << mayor_poblacion << endl;
+    cout << "Departamento con la menor poblacion: " << menor_poblacion << endl;
