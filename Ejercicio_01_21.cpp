@@ -1,22 +1,26 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
-int main() {
+using namespace std;
+
+int main() 
+{
     // Declarar tres vectores de enteros
-    std::vector<int> vector1(5);
-    std::vector<int> vector2(5);
-    std::vector<int> vector3(5);
+    vector<int> vector1(5);
+    vector<int> vector2(5);
+    vector<int> vector3(5);
 
     // Pedir valores para vector1
-    std::cout << "Ingrese 5 valores para el vector1: ";
+    cout << "Ingrese 5 valores enteros para el vector1: ";
     for (int i = 0; i < 5; ++i) {
-        std::cin >> vector1[i];
+        cin >> vector1[i];
     }
 
     // Pedir valores para vector2
-    std::cout << "Ingrese 5 valores para el vector2: ";
+    cout << "Ingrese 5 valores enteros para el vector2: ";
     for (int i = 0; i < 5; ++i) {
-        std::cin >> vector2[i];
+        cin >> vector2[i];
     }
 
     // Calcular vector3 = vector1 + vector2
@@ -25,11 +29,11 @@ int main() {
     }
 
     // Mostrar el resultado en vector3
-    std::cout << "El vector3 resultante es: ";
+    cout << "El vector3 resultante es: ";
     for (int i = 0; i < 5; ++i) {
-        std::cout << vector3[i] << " ";
+        cout << vector3[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
